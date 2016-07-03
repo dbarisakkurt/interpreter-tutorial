@@ -3,15 +3,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>fbdf0340-8028-4cf4-84a2-0b28ba72dcc7</ProjectGuid>
+    <ProjectGuid>3c802914-d967-4d8b-a7d1-ad25ee460972</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>calc1_Exercise.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>calc1_ExerciseTest.py</StartupFile>
+    <SearchPath>..\Interpreter\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Interpreter</Name>
-    <RootNamespace>Interpreter</RootNamespace>
+    <Name>InterpreterTest</Name>
+    <RootNamespace>InterpreterTest</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,13 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="calc1.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="calc1_Exercise.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Interpreter.py" />
+    <Compile Include="calc1_ExerciseTest.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interpreter\Interpreter.pyproj">
+      <Name>Interpreter</Name>
+      <Project>{fbdf0340-8028-4cf4-84a2-0b28ba72dcc7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
