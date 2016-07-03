@@ -1,8 +1,9 @@
 
 #Test cases for calc1_Exercise file
 
-from calc1_Exercise import Interpreter
 import unittest
+from calc1_Exercise import Interpreter
+
 
 class TestAdditionOperation(unittest.TestCase):
 

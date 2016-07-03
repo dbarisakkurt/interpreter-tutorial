@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3c802914-d967-4d8b-a7d1-ad25ee460972</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>calc1_ExerciseTest.py</StartupFile>
+    <StartupFile>calc2_ExerciseTest.py</StartupFile>
     <SearchPath>..\Interpreter\</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="calc1_ExerciseTest.py" />
+    <Compile Include="calc2_ExerciseTest.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interpreter\Interpreter.pyproj">
