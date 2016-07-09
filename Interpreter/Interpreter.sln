@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Interpreter", "Interpreter\Interpreter.pyproj", "{FBDF0340-8028-4CF4-84A2-0B28BA72DCC7}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "InterpreterTest", "InterpreterTest\InterpreterTest.pyproj", "{3C802914-D967-4D8B-A7D1-AD25EE460972}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PlusMinusMultiTermInterpreterFromScratch", "PlusMinusMultiTermInterpreterFromScratch\PlusMinusMultiTermInterpreterFromScratch.pyproj", "{C8F6CBA5-9E51-4DD8-9DDD-8274068D7C1A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PlusMinusMultiplyDivideInterpreter", "PlusMinusMultiplyDivideInterpreter\PlusMinusMultiplyDivideInterpreter.pyproj", "{A8A02223-1DD2-43E6-81FE-3F8675710B0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{3C802914-D967-4D8B-A7D1-AD25EE460972}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8F6CBA5-9E51-4DD8-9DDD-8274068D7C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C8F6CBA5-9E51-4DD8-9DDD-8274068D7C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A02223-1DD2-43E6-81FE-3F8675710B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A02223-1DD2-43E6-81FE-3F8675710B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
