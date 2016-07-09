@@ -2,8 +2,8 @@
 #
 # EOF (end-of-file) token is used to indicate that
 # there is no more input left for lexical analysis
-INTEGER, PLUS, MINUS, MUL, DIV, EOF = (
-    'INTEGER', 'PLUS', 'MINUS', 'MUL', 'DIV', 'EOF'
+INTEGER, PLUS, MINUS, MUL, DIV, EOF, L_PAREN, R_PAREN = (
+    'INTEGER', 'PLUS', 'MINUS', 'MUL', 'DIV', 'EOF', 'L_PAREN', 'R_PAREN'
 )
 
 
@@ -92,6 +92,14 @@ class Lexer(object):
             if self.current_char == '/':
                 self.advance()
                 return Token(DIV, '/')
+            
+            if self.current_char == '(':
+                self.advance()
+                return Token(L_PAREN, '(')
+
+            if self.current_char == ')':
+                self.advance()
+                return Token(R_PAREN, ')')
 
             self.error()
 
@@ -120,8 +128,15 @@ class Interpreter(object):
     def factor(self):
         """factor : INTEGER"""
         token = self.current_token
-        self.eat(INTEGER)
-        return token.value
+
+        if token.type == INTEGER:
+            self.eat(INTEGER)
+            return token.value
+        else:
+            self.eat(L_PAREN)
+            result = self.expr()
+            self.eat(R_PAREN)
+            return result
 
     def term(self):
         """term : factor ((MUL | DIV) factor)*"""
@@ -140,13 +155,12 @@ class Interpreter(object):
 
     def expr(self):
         """Arithmetic expression parser / interpreter.
-
-        calc>  14 + 2 * 3 - 6 / 2
-        17
+        calc>  (14 + 2) * 3 - 6 / 2
+        45
 
         expr   : term ((PLUS | MINUS) term)*
         term   : factor ((MUL | DIV) factor)*
-        factor : INTEGER
+        factor : INTEGER | L_PAREN expr R_PAREN
         """
         result = self.term()
 
