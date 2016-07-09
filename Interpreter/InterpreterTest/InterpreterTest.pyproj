@@ -28,6 +28,9 @@
     <Compile Include="calc3_ExerciseTest.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="calc4_ExerciseTest.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interpreter\Interpreter.pyproj">

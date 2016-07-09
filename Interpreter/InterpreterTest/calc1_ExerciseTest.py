@@ -5,7 +5,7 @@ import unittest
 from calc1_Exercise import Interpreter
 
 
-class TestAdditionOperation(unittest.TestCase):
+class Calc1TestCases(unittest.TestCase):
 
     def test_addOneDigitNumber_ToOneDigitNumber_ReturnsTen(self):
         interpreter = Interpreter("3+7")
@@ -80,7 +80,6 @@ class TestAdditionOperation(unittest.TestCase):
         result = interpreter.expr()
         self.assertEqual(51776, result)
 
-class TestSubtractionOperation(unittest.TestCase):
     def test_subtractOneDigitNumber_FromOneDigitNumber_ReturnsSix(self):
         interpreter = Interpreter("7-1")
         result = interpreter.expr()
@@ -154,7 +153,6 @@ class TestSubtractionOperation(unittest.TestCase):
         result = interpreter.expr()
         self.assertEqual(-23096, result)
 
-class TestWhitespaceIgnore(unittest.TestCase):
     def test_InputHasWhiteSpace_AddNumbers_ReturnsResult(self):
         interpreter = Interpreter(" 3 + 7 ")
         result = interpreter.expr()

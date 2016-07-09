@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>fbdf0340-8028-4cf4-84a2-0b28ba72dcc7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>calc3.py</StartupFile>
+    <StartupFile>calc4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -38,6 +38,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="calc3_Exercise.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="calc4.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="calc4_Exercise.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interpreter.py" />

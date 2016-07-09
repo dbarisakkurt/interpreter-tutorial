@@ -3,7 +3,7 @@
 import unittest
 from calc2_Exercise import Interpreter
 
-class TestMultiplication(unittest.TestCase):
+class Calc2TestCases(unittest.TestCase):
     def test_multiplyOneDigitNumber_WithOneDigitNumber_ReturnsTwentyOne(self):
         interpreter = Interpreter("3*7")
         result = interpreter.expr()
@@ -77,7 +77,6 @@ class TestMultiplication(unittest.TestCase):
         result = interpreter.expr()
         self.assertEqual(536832240, result)
 
-class TestDivision(unittest.TestCase):
     def test_divideOneDigitNumber_ToOneDigitNumber_ReturnsResult(self):
         interpreter = Interpreter("3/7")
         result = interpreter.expr()
@@ -146,7 +145,6 @@ class TestDivision(unittest.TestCase):
         result = interpreter.expr()
         self.assertEqual(1, result)
 
-class TestMultipleAdditionSubtractionExpressions(unittest.TestCase):
     def test_multipleAdditions(self):
         interpreter = Interpreter("1+2+3+4")
         result = interpreter.expr()

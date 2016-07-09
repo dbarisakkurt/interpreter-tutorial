@@ -3,7 +3,7 @@
 import unittest
 from calc3_Exercise import Interpreter
 
-class TestMultipleMultiplicationDivisionExpressions(unittest.TestCase):
+class Calc4TestCases(unittest.TestCase):
     def test_multipleMultiplications(self):
         interpreter = Interpreter("1*2*3*4")
         result = interpreter.expr()
