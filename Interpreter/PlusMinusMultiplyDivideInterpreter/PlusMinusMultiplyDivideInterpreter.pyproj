@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a8a02223-1dd2-43e6-81fe-3f8675710b0f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PlusMinusMultiplyDivideInterpreter.py</StartupFile>
+    <StartupFile>Interpreter.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PlusMinusMultiplyDivideInterpreter.py" />
+    <Compile Include="InterpreterTest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lexer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interpreter.py" />
+    <Compile Include="Token.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TokenType.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
