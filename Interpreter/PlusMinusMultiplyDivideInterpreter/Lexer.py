@@ -22,37 +22,41 @@ class Lexer(object):
             self.advance()
     
     def eatOperator(self):
-        if self.pos < len(self.text) and self.text[self.pos: self.pos+1]=='+':
-            token = Token(TokenType.ADD, self.text[self.pos: self.pos+1])
+        if self.pos < len(self.text) and self.isAddition():
+            token = Token(TokenType.ADD, self.text[self.pos])
             self.advance()
             return token
-        elif self.pos < len(self.text) and self.text[self.pos: self.pos+1]=='-':
-            token = Token(TokenType.SUBTRACT, self.text[self.pos: self.pos+1])
+        elif self.pos < len(self.text) and self.isSubtraction():
+            token = Token(TokenType.SUBTRACT, self.text[self.pos])
             self.advance()
             return token
-        elif self.pos < len(self.text) and self.text[self.pos: self.pos+1]=='*' or self.pos < len(self.text):
-            token = Token(TokenType.MULTIPLY, self.text[self.pos: self.pos+1])
+        elif self.pos < len(self.text) and self.isMultiplication():
+            token = Token(TokenType.MULTIPLY, self.text[self.pos])
             self.advance()
             return token
-        elif self.pos < len(self.text) and self.text[self.pos: self.pos+1]=='/':
-            token = Token(TokenType.DIVIDE, self.text[self.pos: self.pos+1])
+        elif self.pos < len(self.text) and self.isDivision():
+            token = Token(TokenType.DIVIDE, self.text[self.pos])
             self.advance()
             return token
         else:
             raise ValueError('Unknown operator')
 
     def isAddition(self):
-        if(self.text[self.pos: self.pos+1]=='+'):
+        if(self.text[self.pos: self.pos+1]==TokenType.ADD):
             return True
+        return False
 
     def isSubtraction(self):
-        if(self.text[self.pos: self.pos+1]=='-'):
+        if(self.text[self.pos: self.pos+1]==TokenType.SUBTRACT):
             return True
+        return False
 
     def isMultiplication(self):
-        if(self.text[self.pos: self.pos+1]=='*'):
+        if(self.text[self.pos: self.pos+1]==TokenType.MULTIPLY):
             return True
+        return False
 
     def isDivision(self):
-        if(self.text[self.pos: self.pos+1]=='/'):
+        if(self.text[self.pos: self.pos+1]==TokenType.DIVIDE):
             return True
+        return False

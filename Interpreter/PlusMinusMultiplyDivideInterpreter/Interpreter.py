@@ -9,8 +9,8 @@ from TokenType import *
 
 
 class Interpreter(object):
-    def __init__(self, lexer):
-        self.lexer = lexer
+    def __init__(self, text):
+        self.lexer = Lexer(text)
 
     def interpret(self):
         return self.expr()
@@ -24,13 +24,17 @@ class Interpreter(object):
     
         while(self.lexer.isAddition() or self.lexer.isSubtraction()):
             operator = self.lexer.eatOperator()
+            
             self.lexer.eatWhitespace()
+            
             token = self.term()
             
-            if operator.value == '+':
+            if operator.value == TokenType.ADD:
                 result = result + token
-            else:
+            elif operator.value == TokenType.SUBTRACT:
                 result = result - token
+            else:
+                raise ValueError("Parse error")
 
         return result
             
@@ -47,10 +51,12 @@ class Interpreter(object):
             self.lexer.eatWhitespace()
             token = self.factor()
 
-            if operator.value == '*':
+            if operator.value == TokenType.MULTIPLY:
                 result = result * int(token.value)
-            else:
+            elif operator.value == TokenType.DIVIDE:
                 result = result / int(token.value)
+            else:
+                raise ValueError("Parse error")
 
         return result
 
