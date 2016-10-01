@@ -254,3 +254,4 @@ paket-files/
 /Interpreter/PlusMinusMultiplyDivideInterpreter/__pycache__/Lexer.cpython-35.pyc
 /Interpreter/PlusMinusMultiplyDivideInterpreter/__pycache__/Token.cpython-35.pyc
 /Interpreter/PlusMinusMultiplyDivideInterpreter/__pycache__/TokenType.cpython-35.pyc
+/Interpreter/PlusMinusMultiplyDivideInterpreter/__pycache__/InterpreterTest.cpython-35.pyc
