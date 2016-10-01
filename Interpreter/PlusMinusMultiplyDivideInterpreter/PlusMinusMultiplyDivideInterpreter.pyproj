@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a8a02223-1dd2-43e6-81fe-3f8675710b0f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Interpreter.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interpreter.py" />
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Token.py">
       <SubType>Code</SubType>
     </Compile>
