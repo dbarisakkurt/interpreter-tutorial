@@ -17,6 +17,9 @@ class Interpreter(object):
         
     def expr(self):
         result = 0
+    
+        self.lexer.eatWhitespace()
+
         token = self.term()
         result = token
 
@@ -28,6 +31,8 @@ class Interpreter(object):
             self.lexer.eatWhitespace()
             
             token = self.term()
+
+            self.lexer.eatWhitespace()
             
             if operator.value == TokenType.ADD:
                 result = result + token
@@ -41,6 +46,9 @@ class Interpreter(object):
 
     def term(self):
         result = 1
+    
+        self.lexer.eatWhitespace()
+
         token = self.factor()
         result = int(token.value)
 
@@ -48,13 +56,17 @@ class Interpreter(object):
 
         while(self.lexer.isMultiplication() or self.lexer.isDivision()):
             operator = self.lexer.eatOperator()
+
             self.lexer.eatWhitespace()
+
             token = self.factor()
+
+            self.lexer.eatWhitespace()
 
             if operator.value == TokenType.MULTIPLY:
                 result = result * int(token.value)
             elif operator.value == TokenType.DIVIDE:
-                result = result / int(token.value)
+                result = result // int(token.value)
             else:
                 raise ValueError("Parse error")
 

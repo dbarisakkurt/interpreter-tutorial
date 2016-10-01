@@ -42,21 +42,21 @@ class Lexer(object):
             raise ValueError('Unknown operator')
 
     def isAddition(self):
-        if(self.text[self.pos: self.pos+1]==TokenType.ADD):
+        if(self.pos < len(self.text) and self.text[self.pos]==TokenType.ADD):
             return True
         return False
 
     def isSubtraction(self):
-        if(self.text[self.pos: self.pos+1]==TokenType.SUBTRACT):
+        if(self.pos < len(self.text) and self.text[self.pos]==TokenType.SUBTRACT):
             return True
         return False
 
     def isMultiplication(self):
-        if(self.text[self.pos: self.pos+1]==TokenType.MULTIPLY):
+        if(self.pos < len(self.text) and self.text[self.pos]==TokenType.MULTIPLY):
             return True
         return False
 
     def isDivision(self):
-        if(self.text[self.pos: self.pos+1]==TokenType.DIVIDE):
+        if(self.pos < len(self.text) and self.text[self.pos]==TokenType.DIVIDE):
             return True
         return False
